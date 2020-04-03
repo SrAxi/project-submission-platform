@@ -1,7 +1,6 @@
 <template>
     <v-app>
         <SideMenu />
-        
         <Header />
         
         <v-content>
@@ -19,8 +18,8 @@
 <script>
     import SideMenu from './components/SideMenu'
     import Header from './components/Header'
-    import Projects from './components/Projects'
     import Footer from './components/Footer'
+    import Projects from './components/Projects/Projects'
 
     export default {
         name: 'App',

@@ -1,7 +1,6 @@
 <template>
     <v-footer
         app
-        absolute
         dark
     >
         <v-row no-gutters text-center>
