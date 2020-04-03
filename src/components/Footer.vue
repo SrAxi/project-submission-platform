@@ -3,7 +3,7 @@
         app
         dark
     >
-        <v-row no-gutters text-center>
+        <v-row no-gutters class="text-center">
             <v-col>
                 <span>Created by: Riccardo Polacci</span>
             </v-col>
