@@ -47,7 +47,7 @@
                     <v-icon
                         class="mr-2"
                         title="View project"
-                        @click="editItem(item)"
+                        @click="viewItem(item)"
                     >
                         remove_red_eye
                     </v-icon>
@@ -79,16 +79,22 @@
             :save="save"
             :close="close"
         />
+        <ViewProjectModal
+            :viewDialog="viewDialog"
+            :projectData="editedItem"
+            :close="closeView"
+        />
     </v-card>
 </template>
 
 <script>
     import { getTechColor, truncateString } from '../../utils/utils'
     import ProjectModal from './ProjectModal'
+    import ViewProjectModal from './ViewProjectModal'
 
     export default {
         name: 'Projects',
-        components: { ProjectModal },
+        components: { ViewProjectModal, ProjectModal },
         data: () => ({
             search: '',
             headers: [
@@ -211,6 +217,7 @@
                 },
             ],
             dialog: false,
+            viewDialog: false,
             editedIndex: -1,
             editedItem: {
                 name: '',
@@ -232,6 +239,11 @@
             truncate(description) {
                 return truncateString(description)
             },
+            viewItem(item) {
+                this.editedIndex = this.projects.indexOf(item)
+                this.editedItem = Object.assign({}, item)
+                this.viewDialog = true
+            },
             editItem(item) {
                 this.editedIndex = this.projects.indexOf(item)
                 this.editedItem = Object.assign({}, item)
@@ -245,6 +257,14 @@
 
             close() {
                 this.dialog = false
+                setTimeout(() => {
+                    this.editedItem = Object.assign({}, this.defaultItem)
+                    this.editedIndex = -1
+                }, 300)
+            },
+
+            closeView() {
+                this.viewDialog = false
                 setTimeout(() => {
                     this.editedItem = Object.assign({}, this.defaultItem)
                     this.editedIndex = -1

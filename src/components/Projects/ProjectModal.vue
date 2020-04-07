@@ -1,6 +1,8 @@
 <template>
     <v-dialog
         v-model="dialog"
+        persistent
+        max-width="600px"
     >
         <v-card>
             <v-card-title>
@@ -16,9 +18,13 @@
                         <v-col cols="12" sm="6" md="4">
                             <v-text-field v-model="editedItem.created_by" label="Your Name"></v-text-field>
                         </v-col>
+                    </v-row>
+                    <v-row>
                         <v-col cols="12" sm="6" md="4">
                             <v-text-field v-model="editedItem.description" label="Description"></v-text-field>
                         </v-col>
+                    </v-row>
+                    <v-row>
                         <v-col cols="12" sm="6" md="4">
                             <v-text-field v-model="editedItem.tech_stack" label="Tech stack"></v-text-field>
                         </v-col>
