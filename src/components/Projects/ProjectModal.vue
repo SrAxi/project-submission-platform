@@ -1,6 +1,6 @@
 <template>
     <v-dialog
-        v-model="dialog"
+        v-model="projectDialog"
         persistent
         max-width="600px"
     >
@@ -45,7 +45,7 @@
     export default {
         name: 'ProjectModal',
         props: {
-            dialog: {
+            projectDialog: {
                 type: Boolean,
                 default: false
             },
@@ -70,7 +70,7 @@
             },
         },
         watch: {
-            dialog(val) {
+            projectDialog(val) {
                 val || this.close()
             },
         },
