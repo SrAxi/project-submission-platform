@@ -7,7 +7,7 @@
             <v-container
                 fluid
             >
-                <Projects />
+                <router-view></router-view>
             </v-container>
         </v-content>
         
@@ -19,14 +19,12 @@
     import SideMenu from './components/SideMenu'
     import Header from './components/Header'
     import Footer from './components/Footer'
-    import Projects from './components/Projects/Projects'
 
     export default {
         name: 'App',
 
         components: {
             Footer,
-            Projects,
             SideMenu,
             Header,
         },
