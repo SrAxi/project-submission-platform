@@ -9,7 +9,7 @@
                 <span class="headline">{{ formTitle }}</span>
             </v-card-title>
             
-            <v-card-text>
+            <v-card-text class="pb-0">
                 <v-form>
                     <v-container>
                         <v-row>
