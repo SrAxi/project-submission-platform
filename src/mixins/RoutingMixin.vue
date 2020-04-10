@@ -3,9 +3,26 @@
 
     export default {
         name: 'RoutingMixin',
+        computed: {
+            projectsIsActive() {
+                return this.$route.path === PATHS.PROJECTS
+            },
+            participantsIsActive() {
+                return this.$route.path === PATHS.PARTICIPANTS
+            },
+            toolsIsActive() {
+                return this.$route.path === PATHS.TOOLS
+            },
+            tipsAndIdeasIsActive() {
+                return this.$route.path === PATHS.TIPS_AND_IDEAS
+            },
+            supportIsActive() {
+                return this.$route.path === PATHS.SUPPORT
+            },
+        },
         methods: {
             navigateTo(path) {
-                if (this.$router.currentRoute.path !== path) {
+                if (this.$route.path !== path) {
                     this.$router.push({ path })
                 }
             },
