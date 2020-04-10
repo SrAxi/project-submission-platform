@@ -29,6 +29,18 @@
                         <v-list-item-subtitle>{{projectData.created_by}}</v-list-item-subtitle>
                     </v-list-item-content>
                 </v-list-item>
+                <v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title>Email</v-list-item-title>
+                        <v-list-item-subtitle>{{projectData.email}}</v-list-item-subtitle>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title>Office</v-list-item-title>
+                        <v-list-item-subtitle>{{projectData.office}}</v-list-item-subtitle>
+                    </v-list-item-content>
+                </v-list-item>
             </v-list>
             <v-divider></v-divider>
             <v-list three-line subheader>
@@ -40,6 +52,23 @@
                 </v-list-item>
             </v-list>
             <v-divider></v-divider>
+            <v-list three-line subheader>
+                <v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title>Roles needed</v-list-item-title>
+                        <v-list-item-subtitle>
+                            <v-chip
+                                class="mr-1 mt-1"
+                                v-for="roleId in projectData.rolesNeeded"
+                                :key="roleId"
+                                color="primary"
+                                dark>
+                                {{ getRoleName(roleId) }}
+                            </v-chip>
+                        </v-list-item-subtitle>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
             <v-list three-line subheader>
                 <v-list-item>
                     <v-list-item-content>
@@ -74,6 +103,9 @@
             projectData: {
                 type: Object,
                 default: () => ({}),
+            },
+            getRoleName: {
+                type: Function,
             },
             close: {
                 type: Function,

@@ -32,7 +32,7 @@
             </template>
             <template v-slot:item.tech_stack="{ item }">
                 <v-chip
-                    class="mr-1 mt-1"
+                    class="mr-1 my-1"
                     v-for="tech in item.tech_stack"
                     :key="tech"
                     :color="getColor(tech)"
@@ -42,7 +42,7 @@
             </template>
             <template v-slot:item.rolesNeeded="{ item }">
                 <v-chip
-                    class="mr-1 mt-1"
+                    class="mr-1 my-1"
                     v-for="roleId in item.rolesNeeded"
                     :key="roleId"
                     color="primary"
@@ -87,6 +87,10 @@
             :editedItem="editedItem"
             :defaultItem="defaultItem"
             :editedIndex="editedIndex"
+            :getRoleName="getRoleName"
+            :roles="roles"
+            :getColor="getColor"
+            :technologies="technologies"
             :save="save"
             :close="close"
         />
@@ -94,6 +98,7 @@
             :viewDialog="viewDialog"
             :projectData="editedItem"
             :close="closeView"
+            :getRoleName="getRoleName"
         />
         <ConfirmationModal
             :confirmationDialog="confirmationDialog"
@@ -162,6 +167,19 @@
             ],
             projects: [],
             roles: [],
+            technologies: [
+                'python',
+                'javascript',
+                'java',
+                'sql',
+                'vue',
+                'react',
+                'docker',
+                'kubernetes',
+                'c#',
+                'c++',
+                'angular',
+            ],
             loading: false,
             projectDialog: false,
             viewDialog: false,
@@ -173,13 +191,19 @@
                 name: '',
                 created_by: '',
                 description: '',
+                email: '',
+                office: '',
                 tech_stack: [],
+                rolesNeeded: [],
             },
             defaultItem: {
                 name: '',
                 created_by: '',
                 description: '',
+                email: '',
+                office: '',
                 tech_stack: [],
+                rolesNeeded: [],
             },
         }),
         mounted() {
