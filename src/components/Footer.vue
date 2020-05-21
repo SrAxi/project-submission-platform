@@ -8,10 +8,10 @@
                 <span>Created by: Riccardo Polacci</span>
             </v-col>
             <v-col>
-                <span>&copy; Geekon2020</span>
+                <span>&copy; RiccardoPolacci2020</span>
             </v-col>
             <v-col>
-                <span>Powered by: Adam Ciężkowski</span>
+                <span>Powered by: Backend Engine</span>
             </v-col>
         </v-row>
     </v-footer>
