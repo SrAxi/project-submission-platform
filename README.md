@@ -1,4 +1,4 @@
-# geekon2020-website
+# Project Platform Submission
 
 ## Project setup
 ```
