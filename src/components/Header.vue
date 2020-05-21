@@ -4,7 +4,7 @@
         clipped-left
     >
         <v-toolbar-title>
-            <h1 class="geekon-logo" @click="goToProjects">Geekon 2020</h1>
+            <h1 class="logo" @click="goToProjects">Project Submission Platform 2020</h1>
         </v-toolbar-title>
     </v-app-bar>
 </template>
@@ -19,7 +19,7 @@
 </script>
 
 <style scoped>
-    .geekon-logo:hover {
+    .logo:hover {
         cursor: pointer;
     }
 </style>
